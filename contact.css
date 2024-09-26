@@ -1,0 +1,269 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+font-family: 'MaisonNeueExtendedXThin';
+min-height: 100%; /* Instead of fixed 100vh */
+min-width: 100%;  /* Instead of fixed 100vw */
+margin: 0; 
+padding: 0;
+overflow-x: hidden; /* Prevent horizontal overflow on small screens */
+}
+
+body {
+font-size: calc(1rem + 0.5vw); /* Adjusts with screen width */
+line-height: 1.6; /* To improve readability */
+text-rendering: optimizeLegibility;
+}
+
+p {
+font-size: 1.2rem;
+color: #1e1e1e;
+}
+
+h1, h2{
+color:#1e1e1e
+}
+
+
+/* Header layout */
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 100;
+background-color: white;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+width: 50px;
+height: 50px;
+object-fit: cover; 
+display: block;
+transition: transform 0.3s ease;
+cursor: pointer;
+}
+
+.date-time { /* span */
+font-family: 'MaisonNeueExtendedXThin';
+font-size: smaller;
+color: #1e1e1e;
+letter-spacing: .1em;
+line-height: 3em;
+text-rendering: optimizeLegibility;
+text-align: center;
+}
+
+/* Nav links on the right */
+.nav {
+display: flex;
+align-items: center;
+border: 1px solid #1e1e1e;
+border-radius: 30px;
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+margin-right: 10px;
+}
+
+/* Nav links styling */
+.nav-links li {
+margin-left: 20px;
+}
+
+.nav-links a {
+text-decoration: none;
+color: black;
+font-size: 18px;
+}
+
+.nav-links a:hover {
+padding: 5px;
+background-color: #1e1e1e;
+border-radius: 100px ;
+color: white;
+}
+
+/* Border around the nav items */
+.nav-links li,
+.menu-icon {
+padding: 9px;
+}
+
+@media (max-width: 768px) {
+.header {
+padding: 20px; 
+}
+
+/* Adjust the logo size */
+.logo img {
+width: 40px;
+height: 40px;
+}
+
+/* Adjust the nav items */
+.nav-links li {
+margin-left: 10px;
+}
+
+.nav-links a {
+font-size: 16px;
+}
+
+.nav {
+padding: 8px; /* Reduce padding for smaller screens */
+}
+
+@media (max-width: 480px) {
+.header {
+flex-direction: column; /* Stack the logo and nav vertically */
+padding: 20px;
+}
+
+.logo img {
+margin-bottom: 10px;
+}
+.nav {
+padding: 0px; /* Reduce padding for smaller screens */
+}
+}
+}
+
+span.contact {
+padding: 5px;
+background-color: #1e1e1e;
+border-radius: 100px ;
+color: white;
+}
+
+span.contact:hover {
+padding: none;
+background-color: none;
+border-radius: none;
+color: white
+}
+
+.contact-container {
+    padding: 50px;
+    padding-top: 160px;
+    height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Space between columns */
+}
+
+.contact-form, .contact-details {
+    border: 1px solid #1e1e1e;
+    padding: 20px;
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {    
+    button {
+        font-size: 1.1em; /* Increase button size for easier tapping */
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #494a4c;
+}
+
+
+footer {
+color: #1e1e1e;
+text-align: center;
+padding: 20px;
+width: 100%;
+margin-top: auto;
+}
+
+.copyright {
+font-size: 16px;
+margin-bottom: 5px;
+}
+
+.designer {
+font-size: 14px;
+}
+
+@media (max-width: 768px) {
+footer {
+    padding: 30px; /* More padding for tablets */
+}
+
+.copyright {
+    font-size: 18px; /* Larger font size for tablets */
+}
+
+.designer {
+    font-size: 16px; /* Larger font size for tablets */
+}
+}
+
+@media (max-width: 480px) {
+footer {
+    padding: 40px; /* More padding for mobile devices */
+}
+
+.copyright {
+    font-size: 20px; /* Larger font size for mobile */
+}
+
+.designer {
+    font-size: 18px; /* Larger font size for mobile */
+}
+}
+
+.reveal {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Revealed state: fully visible and in place */
+.reveal.reveal-visible {
+opacity: 1;
+transform: translateY(0);
+}

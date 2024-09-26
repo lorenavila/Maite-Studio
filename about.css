@@ -1,0 +1,341 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'MaisonNeueExtendedXThin';
+  min-height: 100%; /* Instead of fixed 100vh */
+  min-width: 100%;  /* Instead of fixed 100vw */
+  margin: 0; 
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal overflow on small screens */
+  }
+  
+  body {
+  font-size: calc(1rem + 0.5vw); /* Adjusts with screen width */
+  line-height: 1.6; /* To improve readability */
+  text-rendering: optimizeLegibility;
+  }
+  
+  p {
+  font-size: 1.2rem;
+  color: #1e1e1e;
+  }
+  
+  h1, h2{
+  color:#1e1e1e
+  }
+  
+  /* Header layout */
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; 
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  }
+  
+  .date-time { /* span */
+  font-family: 'MaisonNeueExtendedXThin';
+  font-size: smaller;
+  color: #1e1e1e;
+  letter-spacing: .1em;
+  line-height: 3em;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+  }
+  
+  /* Nav links on the right */
+  .nav {
+  display: flex;
+  align-items: center;
+  border: 1px solid #1e1e1e;
+  border-radius: 30px;
+  }
+  
+  .nav-links {
+  display: flex;
+  list-style: none;
+  margin-right: 10px;
+  }
+  
+  /* Nav links styling */
+  .nav-links li {
+  margin-left: 20px;
+  }
+  
+  .nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  }
+
+.nav-links a:hover {
+  padding: 5px;
+  background-color: #1e1e1e;
+  border-radius: 100px ;
+  color: white;
+  }
+  
+  /* Border around the nav items */
+  .nav-links li,
+  .menu-icon {
+  padding: 9px;
+  }
+  
+  @media (max-width: 768px) {
+  .header {
+  padding: 20px; 
+  }
+  
+  /* Adjust the logo size */
+  .logo img {
+  width: 40px;
+  height: 40px;
+  }
+  
+  /* Adjust the nav items */
+  .nav-links li {
+  margin-left: 10px;
+  }
+  
+  .nav-links a {
+  font-size: 16px;
+  }
+  
+  .nav {
+  padding: 8px; /* Reduce padding for smaller screens */
+  }
+  
+  @media (max-width: 480px) {
+  .header {
+  flex-direction: column; /* Stack the logo and nav vertically */
+  padding: 20px;
+  }
+  
+  .logo img {
+  margin-bottom: 10px;
+  }
+  .nav {
+  padding: 0px; /* Reduce padding for smaller screens */
+  }
+  }
+  }
+  
+  span.contact {
+  padding: 5px;
+  background-color: #1e1e1e;
+  border-radius: 100px ;
+  color: white;
+  }
+  
+
+.grid-container {
+display: grid; /* Use CSS Grid */
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+gap: 20px; /* Space between items */
+padding: 50px;
+width: 100%; /* Full width */
+margin: 0 auto; /* Center container */
+}
+
+@media (max-width: 768px) {
+.grid-container {
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for smaller screens */
+gap: 15px; /* Reduce gap on smaller screens */
+padding: 20px;
+padding-top: 100px;
+}
+}
+
+.photo-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /* Default layout */
+gap: 200px; /* Space between images */
+padding: 15px;
+max-width: 100%; /* Ensure grid takes up full width available */
+margin: 0 auto; /* Center grid horizontally */
+justify-content: center; /* Ensure horizontal centering */
+}
+
+@media (max-width: 768px) {
+.photo-grid {
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for smaller screens */
+gap: 50px; /* Reduce gap on smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+.photo-grid {
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* One column for very small screens */
+gap: 20px; /* Further reduce gap */
+}
+}
+
+/* Photo item styling */
+.photo-item {
+position: relative;
+width: 360px; /* Fixed size for items */
+height: 450px; 
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media  (max-width: 768px) {
+.photo-item {
+width: 300px;
+height: 390px;
+}
+}
+
+/* Image styling */
+.photo-item img {
+width: 100%;
+height: auto;
+object-fit: cover; /* Ensures the image fits nicely */
+display: block;
+transition: transform 0.3s ease;
+}
+
+.about-2, .about-1 {
+padding-left: 150px;
+padding-right: 150px;
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+/* @media (max-width: 1200px) {
+.about-2, .about-1 {
+padding-left: 100px;
+padding-right: 100px;
+padding-top: 40px;
+padding-bottom: 40px;
+}
+} */
+
+@media (max-width: 768px) {
+.about-2, .about-1 {
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+}
+
+@media (max-width: 480px) {
+.about-2, .about-1 {
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+}
+
+.long-line {
+width: 85%;
+height: .5px;
+background-color: #ddd;
+widows: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container2 {
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* Default to three columns */
+grid-gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+.grid-container2 {
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* Default to three columns */
+grid-gap: 20px;
+}
+
+/* @media (max-width: 1024px) {
+.grid-container2 {
+grid-template-columns: repeat(2, 1fr); 
+}
+} */
+
+@media (max-width: 768px) {
+.grid-container2 {
+grid-template-columns: 1fr; /* One column for small screens */
+}
+}
+}
+
+.column2 img {
+width: 50%;
+height: auto;
+background-size: cover;
+background-position: center;
+}
+
+.grid-container3 {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Default to two equal-width columns */
+grid-gap: 20px;
+}
+
+@media (max-width: 768px) {
+.grid-container3 {
+grid-template-columns: 1fr; /* Switch to one column for small screens */
+}
+}
+
+
+.column3 img {
+width: 50%;
+height: auto;
+background-size: cover;
+background-position: center;
+}
+
+footer {
+color: #1e1e1e;
+text-align: center;
+padding: 10px;
+bottom: 0;
+width: 100%;
+margin-top: auto;
+}
+
+.copyright {
+font-size: 14px;
+margin-bottom: 5px;
+}
+
+.designer {
+font-size: 12px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Revealed state: fully visible and in place */
+  .reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  }

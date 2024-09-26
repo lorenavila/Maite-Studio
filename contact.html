@@ -1,0 +1,158 @@
+<!--
+/**
+* @license
+* MyFonts Webfont Build ID 669449
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license from one of MyFonts official sites.
+* http://www.fonts.com
+* http://www.myfonts.com
+* http://www.linotype.com
+*
+*/
+-->
+
+<!DOCTYPE html> 
+<html lang="en">
+
+  <!-- Head Tags -->
+  <head> 
+    <meta charset="utf-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maite Studio | Contact</title> 
+    <link rel="icon" type="image/x-icon" href="MS.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="MS.svg" alt="MS Logo">
+        </a>
+        <!-- 
+        <div class="date-time-bar">
+          <span class="date-time"><div id="clockbox"></div></span>
+        </div>
+        <script type="text/javascript">
+          var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+          var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+          function GetClock(){
+            var d=new Date();
+            var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+            var nhour=d.getHours(),nmin=d.getMinutes(),ap;
+            if(nhour==0){ap=" AM EST";nhour=12;}
+            else if(nhour<12){ap=" AM EST";}
+            else if(nhour==12){ap=" PM EST";}
+            else if(nhour>12){ap=" PM EST";nhour-=12;}
+
+            if(nmin<=9) nmin="0"+nmin;
+
+            var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
+            document.getElementById('clockbox').innerHTML=clocktext;
+          }
+
+          GetClock();
+          setInterval(GetClock,1000);
+        </script>
+        -->
+      </div>
+    
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Bookshelf</a></li>
+          <li><a href="blog-about.html">About</a></li>
+          <li><a href="contact.html"><span class="contact">Contact</span></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contact-container">
+        <h2>Contact & Inquire</h2>
+        <div class="grid-container">
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+
+                <div id="response"></div>
+            </form>
+            
+            <div class="contact-details">
+                <h2>Get in Touch</h2>
+                <p>Facebook: Maite Studio</p>
+                <p>Instagram: @maite.studio</p>
+                <p>Email: <a href="mailto:maite.studio@outlook.com">maite.studio@outlook.com</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="reveal">
+      <footer>
+        <div class="copyright">&copy; 2024 Maite Studio. All Rights Reserved.</div>
+        <div class="designer">Website Developed by Lorena Maite Ávila.</div>
+      </footer>
+    </div>
+  
+    <!-- Reveal -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible'); // Add class when in view
+              observer.unobserve(entry.target); // Stop observing once revealed
+            }
+          });
+        }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
+
+        reveals.forEach(reveal => {
+          observer.observe(reveal); // Observe each reveal element
+        });
+      });
+    </script>
+
+    <!-- Email JS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init("ECe_TKeBQyoqNlv5_"); // EmailJS User ID
+      })();
+
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Send email using EmailJS
+        emailjs.sendForm('service_a4bvrss', 'template_supqv8j', this)
+          .then(function() {
+            document.getElementById('response').innerHTML = 'Message sent successfully!';
+          }, function(error) {
+            document.getElementById('response').innerHTML = 'Failed to send message. Error: ' + JSON.stringify(error);
+          });
+      });
+    </script>
+  </body>
+</html>
