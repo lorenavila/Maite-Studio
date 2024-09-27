@@ -130,6 +130,10 @@ flex-direction: column; /* Stack the logo and nav vertically */
 padding: 20px;
 }
 
+.nav-links{
+margin-right: 0px;
+}
+
 .logo img {
 margin-bottom: 10px;
 }
@@ -154,67 +158,87 @@ color: white
 }
 
 .contact-container {
-    padding: 50px;
-    padding-top: 160px;
-    height: 100vh;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 20px; /* Space between columns */
-}
-
-.contact-form, .contact-details {
-    border: 1px solid #1e1e1e;
-    padding: 20px;
-    border-radius: 5px; /* Optional: rounded corners */
+padding: 50px;
+padding-top: 160px;
+padding-bottom: 170px;
+/* height: 100vh; */
 }
 
 @media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    }
+.contact-container {
+padding-bottom:0;
+}
+}
+
+@media (max-width: 480px) {
+.contact-container {
+padding-bottom:0;
+}
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: 1fr 1fr; /* Two columns */
+gap: 20px; /* Space between columns */
+}
+
+.contact-form, .contact-details {
+border: 1px solid #1e1e1e;
+padding: 20px;
+border-radius: 5px; /* Optional: rounded corners */
+}
+
+@media (max-width: 768px) {
+.grid-container {
+grid-template-columns: 1fr; /* Stack columns on smaller screens */
+}
 }
 
 @media (max-width: 480px) {    
-    button {
-        font-size: 1.1em; /* Increase button size for easier tapping */
-    }
+button {
+font-size: 1.1em; /* Increase button size for easier tapping */
+}
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 label {
-    margin: 10px 0 5px;
+margin: 10px 0 5px;
 }
 
 input, textarea {
-    padding: 10px;
-    margin-bottom: 10px;
+padding: 10px;
+margin-bottom: 10px;
 }
 
 button {
-    padding: 10px;
-    background-color: #1e1e1e;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+padding: 10px;
+background-color: #1e1e1e;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
 }
 
 button:hover {
-    background-color: #494a4c;
+background-color: #494a4c;
 }
 
+.long-line {
+width: 85%;
+height: .5px;
+background-color: #ddd;
+widows: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 
 footer {
 color: #1e1e1e;
 text-align: center;
 padding: 20px;
+bottom: 0;
 width: 100%;
 margin-top: auto;
 }
@@ -230,29 +254,29 @@ font-size: 14px;
 
 @media (max-width: 768px) {
 footer {
-    padding: 30px; /* More padding for tablets */
+padding: 30px; /* More padding for tablets */
 }
 
 .copyright {
-    font-size: 18px; /* Larger font size for tablets */
+font-size: 18px; /* Larger font size for tablets */
 }
 
 .designer {
-    font-size: 16px; /* Larger font size for tablets */
+font-size: 16px; /* Larger font size for tablets */
 }
 }
 
 @media (max-width: 480px) {
 footer {
-    padding: 40px; /* More padding for mobile devices */
+padding: 40px; /* More padding for mobile devices */
 }
 
 .copyright {
-    font-size: 20px; /* Larger font size for mobile */
+font-size: 20px; /* Larger font size for mobile */
 }
 
 .designer {
-    font-size: 18px; /* Larger font size for mobile */
+font-size: 18px; /* Larger font size for mobile */
 }
 }
 
