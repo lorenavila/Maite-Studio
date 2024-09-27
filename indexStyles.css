@@ -130,6 +130,10 @@ flex-direction: column; /* Stack the logo and nav vertically */
 padding: 20px;
 }
 
+.nav-links{
+margin-right: 0px;
+}
+
 .logo img {
 margin-bottom: 10px;
 }
@@ -243,10 +247,6 @@ padding: 40px;
 }
 }
 
-.home-item h1, .home-item h2 {
-text-align:justify;
-}
-
 .home-item h1, .services-item h1 {
 font-size: 5rem;
 }
@@ -255,12 +255,12 @@ font-size: 5rem;
 .home-item h1 {
 font-size: 3rem;
 }
+}
 
 
 @media (max-width: 480px) {
 .home-item h1 {
 font-size:  2.5rem;
-}
 }
 }
 
@@ -395,6 +395,13 @@ font-size: 2.5rem;
 width: 100%;
 height: .5px;
 background-color: #1e1e1e;
+}
+
+.long-line {
+width: 85%;
+height: .5px;
+background-color: #ddd;
+widows: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 footer {
