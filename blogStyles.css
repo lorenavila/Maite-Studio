@@ -130,6 +130,10 @@ flex-direction: column; /* Stack the logo and nav vertically */
 padding: 20px;
 }
 
+.nav-links{
+margin-right: 0px;
+}
+
 .logo img {
 margin-bottom: 10px;
 }
@@ -152,33 +156,33 @@ padding-right: 90px;
 }
 
 @media (max-width: 768px) {
-  .blog-body {
-      padding-left: 40px; /* Reduced padding for tablets */
-      padding-right: 40px; /* Reduced padding for tablets */
-  }
+.blog-body {
+padding-left: 40px; /* Reduced padding for tablets */
+padding-right: 40px; /* Reduced padding for tablets */
+}
 
-  .blog-body h1 {
-      font-size: 4em; /* Adjust h1 size for tablets */
-  }
+.blog-body h1 {
+font-size: 3em; 
+}
 
-  .blog-body p {
-      font-size: 1rem; /* Adjust paragraph size for tablets */
-  }
+.blog-body p {
+font-size: 1rem; /* Adjust paragraph size for tablets */
+}
 }
 
 @media (max-width: 480px) {
-  .blog-body {
-      padding-left: 20px; /* Further reduced padding for mobile */
-      padding-right: 20px; /* Further reduced padding for mobile */
-  }
+.blog-body {
+padding-left: 20px; /* Further reduced padding for mobile */
+padding-right: 20px; /* Further reduced padding for mobile */
+}
 
-  .blog-body h1 {
-      font-size: 2.5em; /* Adjust h1 size for mobile */
-  }
+.blog-body h1 {
+font-size: 1em; /* Adjust h1 size for mobile */
+}
 
-  .blog-body p {
-      font-size: 0.9rem; /* Adjust paragraph size for mobile */
-  }
+.blog-body p {
+font-size: 0.9rem; /* Adjust paragraph size for mobile */
+}
 }
 
 .the-blog {
@@ -209,40 +213,40 @@ color: #FFFFFF;
 text-align: center;
 }
 
-@media (max-width: 768px) {
-  .the-blog {
-      padding-top: 60px; /* Reduced top padding for tablets */
-  }
+@media (max-width: 1024px) {
+.the-blog {
+padding-top: 60px; /* Reduced top padding for tablets */
+}
 
-  .the-blog > h1 {
-      font-size: 6em; /* Adjust h1 size for tablets */
-  }
+.the-blog > h1 {
+font-size: 5em; /* Adjust h1 size for tablets */
+}
 
-  .the-blog > h2 {
-      font-size: 3em; /* Adjust h2 size for tablets */
-  }
+.the-blog > h2 {
+font-size: 3em; /* Adjust h2 size for tablets */
+}
 
-  .the-blog > p {
-      font-size: 1.1rem; /* Adjust paragraph size for tablets */
-  }
+.the-blog > p {
+font-size: 1.1rem; /* Adjust paragraph size for tablets */
+}
 }
 
 @media (max-width: 480px) {
-  .the-blog {
-      padding-top: 150px; /* Further reduced top padding for mobile */
-  }
+.the-blog {
+padding-top: 150px; /* Further reduced top padding for mobile */
+}
 
-  .the-blog > h1 {
-      font-size: 3em; /* Adjust h1 size for mobile */
-  }
+.the-blog > h1 {
+font-size: 2.5em; /* Adjust h1 size for mobile */
+}
 
-  .the-blog > h2 {
-      font-size: 2.5em; /* Adjust h2 size for mobile */
-  }
+.the-blog > h2 {
+font-size: 2em; /* Adjust h2 size for mobile */
+}
 
-  .the-blog > p {
-      font-size: 1.5rem; /* Adjust paragraph size for mobile */
-  }
+.the-blog > p {
+font-size: 1.5rem; /* Adjust paragraph size for mobile */
+}
 }
 
 /* EVIL EYE  */
@@ -347,42 +351,42 @@ cursor: default;
 }
 
 @media (max-width: 768px) {
-  .bookshelf {
-      padding-left: 40px; /* Reduced left padding for tablets */
-      padding-right: 40px; /* Reduced right padding for tablets */
-  }
+.bookshelf {
+padding-left: 40px; /* Reduced left padding for tablets */
+padding-right: 40px; /* Reduced right padding for tablets */
+}
 
-  .bookshelf > h1 {
-      font-size: 2.5em; /* Adjust h1 size for tablets */
-  }
+.bookshelf > h1 {
+font-size: 2.5em; /* Adjust h1 size for tablets */
+}
 
-  .line {
-      width: 20%; /* Adjust line width for tablets */
-  }
+.line {
+width: 20%; 
+}
 
-  .bookshelf p {
-    font-size: 4rem; /* Adjust font size for tablets */
+.bookshelf p {
+font-size: 4rem; /* Adjust font size for tablets */
 }
 }
 
 @media (max-width: 480px) {
-  .bookshelf {
-      padding-left: 20px; /* Further reduced left padding for mobile */
-      padding-right: 20px; /* Further reduced right padding for mobile */
-  }
+.bookshelf {
+padding-left: 20px; /* Further reduced left padding for mobile */
+padding-right: 20px; /* Further reduced right padding for mobile */
+}
 
-  .bookshelf > h1 {
-      font-size: 2em; /* Adjust h1 size for mobile */
-  }
+.bookshelf > h1 {
+font-size: 2em; /* Adjust h1 size for mobile */
+}
 
-  .line {
-      width: 30%; /* Adjust line width for mobile */
-  }
+.line {
+width: 30%; /* Adjust line width for mobile */
+}
 
-  .bookshelf > p {
-    font-size: 1.5rem; /* Adjust font size for mobile */
-    padding-left: 10px; /* Add some padding for better spacing */
-    padding-right: 10px; /* Add some padding for better spacing */
+.bookshelf > p {
+font-size: 1.5rem; /* Adjust font size for mobile */
+padding-left: 10px; /* Add some padding for better spacing */
+padding-right: 10px; /* Add some padding for better spacing */
 }
 }
 
@@ -514,41 +518,41 @@ font-size: 14px;
 }
 
 @media (max-width: 768px) {
-  footer {
-      padding: 30px; /* More padding for tablets */
-  }
-  
-  .copyright {
-      font-size: 18px; /* Larger font size for tablets */
-  }
+footer {
+padding: 30px; /* More padding for tablets */
+}
 
-  .designer {
-      font-size: 16px; /* Larger font size for tablets */
-  }
+.copyright {
+font-size: 18px; /* Larger font size for tablets */
+}
+
+.designer {
+font-size: 16px; /* Larger font size for tablets */
+}
 }
 
 @media (max-width: 480px) {
-  footer {
-      padding: 40px; /* More padding for mobile devices */
-  }
-  
-  .copyright {
-      font-size: 20px; /* Larger font size for mobile */
-  }
+footer {
+padding: 40px; /* More padding for mobile devices */
+}
 
-  .designer {
-      font-size: 18px; /* Larger font size for mobile */
-  }
+.copyright {
+font-size: 20px; /* Larger font size for mobile */
+}
+
+.designer {
+font-size: 18px; /* Larger font size for mobile */
+}
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  /* Revealed state: fully visible and in place */
-  .reveal.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-  }
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Revealed state: fully visible and in place */
+.reveal.reveal-visible {
+opacity: 1;
+transform: translateY(0);
+}
