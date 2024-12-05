@@ -277,6 +277,7 @@
         const books = bookshelf.querySelectorAll(".list-inline .book");
         const totalBooks = books.length;
 
+        // Only create pagination if there are more books than the booksPerPage
         if (totalBooks > booksPerPage) {
             const totalPages = Math.ceil(totalBooks / booksPerPage);
         
@@ -324,13 +325,15 @@
             renderPage();
             createPaginationControls();
         } else {
+            // If there are less than or equal to 8 books, render the books normally without pagination
             books.forEach(book => {
                 book.style.display = "inline-block";
             });
         }
     });
 });
-    </script>
+
+        </script>
     </center>
 
     <center>
@@ -439,7 +442,10 @@ searchBar.addEventListener('input', () => {
                         }
                     });
                 },
-                { threshold: 0.2 }
+                { 
+                    threshold: 0.2, 
+                    rootMargin: "0px 0px -50px 0px"
+                }
             ); // Trigger when 20% of the element is visible
 
             reveals.forEach((reveal) => {
