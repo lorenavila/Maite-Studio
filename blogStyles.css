@@ -4,6 +4,10 @@ padding: 0;
 box-sizing: border-box;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
 body, html {
 font-family: 'MaisonNeueExtendedXThin';
 min-height: 100%; /* Instead of fixed 100vh */
@@ -604,7 +608,7 @@ transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 /* Revealed state: fully visible and in place */
-.reveal.reveal-visible {
+.reveal-visible {
 opacity: 1;
 transform: translateY(0);
 }
