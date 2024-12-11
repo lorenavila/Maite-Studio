@@ -91,7 +91,7 @@
             <br />
             <p>[ my - teh ] studio.</p>
 
-            <br><div class="evil-eye">
+            <div class="evil-eye">
                 <div class="circle">
                     <!-- loading sphere -->
                     <span class="iris"></span>
@@ -176,6 +176,26 @@
     </center>
 
     <center>
+        <br><input type="text" id="search-bar" placeholder="Search for a book..." /><br>
+        <script>
+            const searchBar = document.getElementById('search-bar');
+            const books = document.querySelectorAll('.book'); 
+            
+            searchBar.addEventListener('input', () => {
+                const query = searchBar.value.toLowerCase();
+            
+                books.forEach(book => {
+                    const img = book.querySelector('img');
+                    const title = img.alt.toLowerCase(); // Read alt text directly
+                    if (title.includes(query)) {
+                        book.style.display = ''; // Reset to default display
+                    } else {
+                        book.style.display = 'none'; // Hide book
+                    }
+                });
+            });
+        </script>
+
         <div class="bookshelf">
             <div class="reveal">
                 <h1>Non-Fiction Reads</h1>
@@ -268,77 +288,11 @@
                 </ul>
             </div>
         </div>
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const booksPerPage = 8; // Adjust the number of books per page
-    const bookshelves = document.querySelectorAll(".bookshelf");
-    
-    bookshelves.forEach(bookshelf => {
-        const books = bookshelf.querySelectorAll(".list-inline .book");
-        const totalBooks = books.length;
-
-        // Only create pagination if there are more books than the booksPerPage
-        if (totalBooks > booksPerPage) {
-            const totalPages = Math.ceil(totalBooks / booksPerPage);
-        
-            let currentPage = 1;
-        
-            const renderPage = () => {
-                // Hide all books
-                books.forEach((book, index) => {
-                    book.style.display = "none";
-                    // Display books for the current page
-                    if (index >= (currentPage - 1) * booksPerPage && index < currentPage * booksPerPage) {
-                        book.style.display = "inline-block";
-                    }
-                });
-            };
-        
-            const createPaginationControls = () => {
-                const paginationWrapper = document.createElement("div");
-                paginationWrapper.classList.add("pagination-controls");
-        
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageButton = document.createElement("button");
-                    pageButton.textContent = i;
-                    pageButton.classList.add("pagination-button");
-                    if (i === currentPage) {
-                        pageButton.classList.add("active");
-                    }
-                    pageButton.addEventListener("click", () => {
-                        currentPage = i;
-                        updatePagination();
-                    });
-                    paginationWrapper.appendChild(pageButton);
-                }
-                bookshelf.appendChild(paginationWrapper);
-            };
-        
-            const updatePagination = () => {
-                const paginationButtons = bookshelf.querySelectorAll(".pagination-button");
-                paginationButtons.forEach(button => button.classList.remove("active"));
-                paginationButtons[currentPage - 1].classList.add("active");
-                renderPage();
-            };
-        
-            // Initialize the pagination
-            renderPage();
-            createPaginationControls();
-        } else {
-            // If there are less than or equal to 8 books, render the books normally without pagination
-            books.forEach(book => {
-                book.style.display = "inline-block";
-            });
-        }
-    });
-});
-
-        </script>
     </center>
 
     <center>
         <div class="long-line"></div>
-        <br />
+        <br/>
     </center>
 
     <center>
@@ -389,33 +343,99 @@
                     </li>
 
                     <li class="book">
-                        <a href="https://lorenamaite.substack.com/p/why-are-we-so-afraid-of-being-just?r=4v3ut9&utm_medium=ios&triedRedirect=true" id="review-link-1">
-                            <img src="Book Images/IFY.png" alt="In Five Years" />
+                        <a href="https://lorenamaite.substack.com/p/why-are-we-so-afraid-of-being-just?r=4v3ut9&utm_medium=ios&triedRedirect=true" id="In Five Years Review">
+                        <img src="Book Images/IFY.png" alt="In Five Years" />
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <br><input type="text" id="search-bar" placeholder="Search for a book..." />
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const booksPerPage = 8; // Adjust the number of books per page
+                const bookshelves = document.querySelectorAll(".bookshelf");
+            
+                // Function to handle pagination based on screen size
+                const handlePagination = () => {
+                    const isMobile = window.innerWidth <= 768; // Check if the screen is mobile-sized
+            
+                    bookshelves.forEach(bookshelf => {
+                        const books = bookshelf.querySelectorAll(".list-inline .book");
+                        const totalBooks = books.length;
+            
+                        // Remove existing pagination controls... if they exist
+                        const existingControls = bookshelf.querySelector(".pagination-controls");
+                        if (existingControls) {
+                            existingControls.remove();
+                        }
+            
+                        if (isMobile) {
+                            // On mobile, display all books without pagination
+                            books.forEach(book => {
+                                book.style.display = "inline-block";
+                            });
+                        } else if (totalBooks > booksPerPage) {
+                            const totalPages = Math.ceil(totalBooks / booksPerPage);
+                            let currentPage = 1;
+            
+                            const renderPage = () => {
+                                // Hide all books
+                                books.forEach((book, index) => {
+                                    book.style.display = "none";
+                                    // Display books for the current page
+                                    if (index >= (currentPage - 1) * booksPerPage && index < currentPage * booksPerPage) {
+                                        book.style.display = "inline-block";
+                                    }
+                                });
+                            };
+            
+                            const createPaginationControls = () => {
+                                const paginationWrapper = document.createElement("div");
+                                paginationWrapper.classList.add("pagination-controls");
+            
+                                for (let i = 1; i <= totalPages; i++) {
+                                    const pageButton = document.createElement("button");
+                                    pageButton.textContent = i;
+                                    pageButton.classList.add("pagination-button");
+                                    if (i === currentPage) {
+                                        pageButton.classList.add("active");
+                                    }
+                                    pageButton.addEventListener("click", () => {
+                                        currentPage = i;
+                                        updatePagination();
+                                    });
+                                    paginationWrapper.appendChild(pageButton);
+                                }
+                                bookshelf.appendChild(paginationWrapper);
+                            };
+            
+                            const updatePagination = () => {
+                                const paginationButtons = bookshelf.querySelectorAll(".pagination-button");
+                                paginationButtons.forEach(button => button.classList.remove("active"));
+                                paginationButtons[currentPage - 1].classList.add("active");
+                                renderPage();
+                            };
+            
+                            // Initialize the pagination
+                            renderPage();
+                            createPaginationControls();
+                        } else {
+                            // If there are less than or equal to 8 books, place the books normally without pagination
+                            books.forEach(book => {
+                                book.style.display = "inline-block";
+                            });
+                        }
+                    });
+                };
+            
+                // Initial call to handle pagination
+                handlePagination();
+            
+                // Reapply pagination logic when the window resizes
+                window.addEventListener("resize", handlePagination);
+            });
+        </script>
     </center>
-    <script>
-const searchBar = document.getElementById('search-bar');
-const books = document.querySelectorAll('.book'); // Assuming each book is inside a `.book` class
-
-searchBar.addEventListener('input', () => {
-    const query = searchBar.value.toLowerCase();
-
-    books.forEach(book => {
-        const img = book.querySelector('img');
-        const title = img.alt.toLowerCase(); // Read alt text directly
-        if (title.includes(query)) {
-            book.style.display = ''; // Reset to default display
-        } else {
-            book.style.display = 'none'; // Hide book
-        }
-    });
-});
-    </script>
 
     <br><center><div class="long-line"></div></center><br>
 
@@ -439,19 +459,16 @@ searchBar.addEventListener('input', () => {
                 (entries, observer) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
-                            entry.target.classList.add("reveal-visible"); // Add class when in view
-                            observer.unobserve(entry.target); // Stop observing once revealed
+                            entry.target.classList.add("reveal-visible"); // Added class when in view
+                            observer.unobserve(entry.target);
                         }
                     });
                 },
-                { 
-                    threshold: 0.2, 
-                    rootMargin: "0px 0px -50px 0px"
-                }
-            ); // Trigger when 20% of the element is visible
+                {threshold: 0.2}
+            );
 
             reveals.forEach((reveal) => {
-                observer.observe(reveal); // Observe each reveal element
+                observer.observe(reveal);
             });
         });
     </script>
